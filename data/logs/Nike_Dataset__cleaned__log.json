@@ -1,0 +1,28 @@
+{
+  "source": "Nike_Dataset / Sheet1",
+  "timestamp": "2026-09-22T13:35:41.054235",
+  "rows_in": 9360,
+  "rows_out": 9360,
+  "rows_removed_total": 0,
+  "blank_rows_removed": 0,
+  "duplicate_rows_removed": 0,
+  "columns_in": 9,
+  "columns_out": [
+    "invoice_date",
+    "product",
+    "region",
+    "retailer",
+    "sales_method",
+    "state",
+    "price_per_unit",
+    "total_sales",
+    "units_sold"
+  ],
+  "columns_standardized": 9,
+  "null_summary": {},
+  "missing_cells": 0,
+  "actions": [
+    "Standardized 9 column name(s): {'Invoice Date': 'invoice_date', 'Product': 'product', 'Region': 'region', 'Retailer': 'retailer', 'Sales Method': 'sales_method'}",
+    "Column 'invoice_date': standardized date/time values"
+  ]
+}
