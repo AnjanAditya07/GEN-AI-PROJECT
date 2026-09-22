@@ -1,0 +1,22 @@
+Chart rendering fix
+===================
+
+Fixed the chart behavior shown in the supplied screenshot.
+
+Root causes fixed:
+1. Successful normal query turns stored chart_spec but omitted chart_requested,
+   so the renderer treated an explicit chart request as a non-chart response and
+   displayed only the dataframe.
+2. Generic follow-up detection incorrectly treated the word "for" as evidence
+   of a new data query. Therefore a phrase such as
+   "show it using a chart for better visualization" did not reuse the previous
+   result and unnecessarily regenerated SQL.
+3. Rendering is now backward-compatible with existing in-session messages that
+   have a valid chart_spec but are missing chart_requested.
+
+Validated scenario:
+- "show it using a chart for better visualization" is detected as a chart request.
+- When the prior result is a monthly trend, the previous dataframe is reused.
+- A line chart is generated with month on X and total_sales on Y.
+- Chart construction returns a valid Plotly figure.
+- Python files compile successfully.
